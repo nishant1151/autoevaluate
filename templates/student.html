@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #tablee{
+        top: 220px;
+        left: 500px;
+        display: inline-block;
+        position: absolute;
+    }</style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div id="tablee">
+    <table  border="1"  cellpadding="10" cellspacing="0">
+		<tr>
+			{% for column in columns %}
+				<th>{{ column }}</th>
+			{% endfor %}
+		</tr>
+		{% for row in data %}
+			<tr>
+				{% for item in row %}
+					<td>{{ item }}</td>
+				{% endfor %}
+			</tr>
+		{% endfor %}
+	</table>
+</div>
+</body>
+</html>
